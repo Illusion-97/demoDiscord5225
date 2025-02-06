@@ -25,7 +25,8 @@ public class DemoBot extends ListenerAdapter {
                                 .addOption(OptionType.STRING, "text", "text to repeat", true)
                 )
                 .queue();
-        accouts = guild.findMembers(m -> !m.getUser().isBot()).get().stream().map(Account::new).toList();
+        guild.findMembers(m -> !m.getUser().isBot())
+                .onSuccess(members -> accouts = members.stream().map(Account::new).toList());
     }
 
     @Override

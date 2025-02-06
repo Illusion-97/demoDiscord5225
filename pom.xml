@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>ad.ya</groupId>
     <artifactId>demodiscord</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>demoDiscord</name>
     <description>demoDiscord</description>
     <url/>
@@ -34,6 +34,7 @@
             <groupId>net.dv8tion</groupId>
             <artifactId>JDA</artifactId>
             <version>5.3.0</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
     <build>
