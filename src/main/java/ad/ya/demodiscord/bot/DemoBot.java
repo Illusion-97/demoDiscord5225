@@ -1,5 +1,6 @@
 package ad.ya.demodiscord.bot;
 
+import ad.ya.demodiscord.bank.Account;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
@@ -9,7 +10,10 @@ import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
+
 public class DemoBot extends ListenerAdapter {
+    private List<Account> accouts;
     // Exécute du code quand le bot est "activé" sur un serveur
     @Override
     public void onGuildReady(@NotNull GuildReadyEvent event) {
@@ -21,6 +25,7 @@ public class DemoBot extends ListenerAdapter {
                                 .addOption(OptionType.STRING, "text", "text to repeat", true)
                 )
                 .queue();
+        accouts = guild.findMembers(m -> !m.getUser().isBot()).get().stream().map(Account::new).toList();
     }
 
     @Override
