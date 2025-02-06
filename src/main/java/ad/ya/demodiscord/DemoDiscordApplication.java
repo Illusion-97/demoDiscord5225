@@ -7,11 +7,7 @@ import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.ChunkingFilter;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import net.dv8tion.jda.api.entities.Guild;
 
-@SpringBootApplication
 public class DemoDiscordApplication {
 
     public static void main(String[] args) {
@@ -34,7 +30,6 @@ public class DemoDiscordApplication {
                 // Message d'activité affiché sur le bot
                 .setActivity(Activity.listening("instructions"))
                 .build();
-        SpringApplication.run(DemoDiscordApplication.class, args);
 
     }
 
